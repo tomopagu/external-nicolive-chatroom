@@ -1,13 +1,19 @@
 <template name="chatBox">
     <div class="messages">
         {{#each messages}}
+            {{user}}
+        {{/each}}
+
+        {{#each messages}}
             {{> chatMessage}}
         {{/each}}
     </div>
 
     <div class="add-message">
         <p class="pull-left">
-            Username: <input id="user" type="text" class="form-control" value="user">
+            {{> loginButtons}}
+            <!-- add a tripcode type thing to validate a true user ala 4chan -->
+            <!-- <input id="user" type="text" class="form-control" value="user"> -->
         </p>
         <div class="form-group">
             <input id="chat-message" class="form-control" placeholder="Write a message">
@@ -16,8 +22,4 @@
             <button class='btn btn-primary' id='send'>Send Chat</button>
         </div>
     </div>
-</template>
-
-<template name="task">
-    <p>{{text}}</p>
 </template>

@@ -1,21 +1,22 @@
-Messages = new Meteor.Collection('messages');
+Messages = new Mongo.Collection('messages');
 
 if (Meteor.isClient) {
   Template.chatBox.helpers({
     messages: function() {
-      return Messages.find({});
+      return Messages.find();
+      // return Messages.find({}, {sort: {createdAt: -1}});
     }
   });
 
-  Template.body.events({
+  Template.chatBox.events({
     "click #send": function (event) {
       // This function is called when the new task form is submitted
 
-      var user = jQuery('#user').val();
+      var username = Meteor.user().username;
       var content = jQuery('#chat-message').val();
 
       Messages.insert({
-        user: user,
+        user: username,
         content: content,
         createdAt: new Date() // current time
       });
@@ -27,6 +28,8 @@ if (Meteor.isClient) {
       return false;
     }
   });
+
+  Meteor.loginVisitor()
 }
 
 Messages.allow({
@@ -35,4 +38,7 @@ Messages.allow({
   }
 });
 
+Accounts.removeOldGuests();
+
 Houston.add_collection(Messages);
+Houston.add_collection(Meteor.users);
