@@ -4,7 +4,6 @@ if (Meteor.isClient) {
   Meteor.subscribe("messages");
   Template.chatBox.helpers({
     messages: function() {
-      // return Messages.find();
       return Messages.find({}, {sort: {createdAt: -1}});
     }
   });

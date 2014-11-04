@@ -8,5 +8,6 @@ if (Meteor.isServer) {
   Accounts.removeOldGuests();
 
   Houston.add_collection(Messages);
+  Houston.add_collection(VideoId);
   Houston.add_collection(Meteor.users);
 }
