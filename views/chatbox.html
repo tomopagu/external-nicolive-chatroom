@@ -1,10 +1,6 @@
 <template name="chatBox">
     <div class="messages">
         {{#each messages}}
-            {{user}}
-        {{/each}}
-
-        {{#each messages}}
             {{> chatMessage}}
         {{/each}}
     </div>
