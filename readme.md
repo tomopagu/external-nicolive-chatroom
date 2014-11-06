@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/tomo-san/external-nicolive-chatroom.png?label=ready&title=Ready)](https://waffle.io/tomo-san/external-nicolive-chatroom)
 # External Nicolive Chatroom
 
 A meteor webapp that houses a chatroom & embed of a Nicolive stream.
