@@ -1,8 +1,14 @@
 <template name="chatMessage">
     <!-- we want to style the message if it's from a user with a trip -->
+    {{#if user}}
     <p>
         <span class="username">{{user}}:</span>
         {{content}}
         <span class="timestamp">&ndash; <span data-livestamp="{{createdAt}}"></span></span>
     </p>
+    {{else}}
+    <p class="songbot-message">
+        {{{content}}}
+    </p>
+    {{/if}}
 </template>
