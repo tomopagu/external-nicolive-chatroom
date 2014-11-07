@@ -1,0 +1,86 @@
+.login-link-and-dropdown-list { position: relative; }
+
+#login-name-link,
+#login-sign-in-link {
+    cursor: pointer;
+    display: block;
+    margin-top: 6px;
+}
+
+.login-close-text {
+    display: block;
+    text-align: right;
+    visibility: hidden;
+    &:after {
+        content: "X";
+        visibility: visible;
+    }
+    &:hover { text-decoration: none; }
+}
+
+#login-dropdown-list {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    width: auto;
+}
+
+
+.login-button-form-submit,
+#signup-link,
+#back-to-login-link,
+#login-buttons-open-change-password,
+#login-buttons-do-change-password,
+#login-buttons-logout {
+    -moz-user-select: none;
+    background-color: #fafafa;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
+    border: medium none;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+    box-sizing: border-box;
+    color: gray;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    min-height: 1em;
+    margin-top: 15px;
+    outline: 0 none;
+    padding: 0.8em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity 0.25s ease 0s, background-color 0.25s ease 0s, color 0.25s ease 0s, background 0.25s ease 0s, box-shadow 0.25s ease 0s;
+    vertical-align: middle;
+    width: 100%;
+    &:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.08));
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.login-button-form-submit {
+    background-color: #5bbd72;
+    color: #fff;
+    &:hover {
+        background-color: #58cb73;
+        color: #fff;
+    }
+}
+
+#login-buttons-logout {
+    background-color: #d95c5c;
+    color: #fff;
+    &:hover {
+        background-color: #e75859;
+        color: #fff;
+    }
+}
