@@ -1,10 +1,13 @@
 <template name="userList">
-    <div class="user-list">
+    <div class="user-list eight wide column">
         <h1>User List</h1>
-        <ul>
-          {{#each users}}
-            <li>{{username}}</li>
-          {{/each}}
-        </ul>
+        <div class="ui horizontal list">
+            {{#each users}}
+                <div class="item">
+                    <div class="ui black circular label"></div>
+                    <div class="content">{{username}}</div>
+                </div>
+            {{/each}}
+        </div>
     </div>
 </template>

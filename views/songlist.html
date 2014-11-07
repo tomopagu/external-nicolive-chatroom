@@ -1,21 +1,24 @@
 <template name="songList">
-    <div class="song-list">
+    <div class="song-list eight wide column">
         <h1>Last Songs</h1>
-        {{#each songs}}
-            {{#if rankid}}
-                <div class="song">
-                    <div class="pull-left">
-                        <div class="rankdir {{rankdirection}}"></div>
-                        <p class="rankid">{{rankid}}</p>
-                        <p class="rankchange">{{rankchange}}</p>
+        <div class="songs">
+            {{#each songs}}
+                {{#if rankid}}
+                    <div class="song ui divided grid">
+                        <div class="four wide column">
+                            <div class="rankdir {{rankdirection}}">{{rankdirection}}</div>
+                            <p class="rankid">{{rankid}}</p>
+                        </div>
+                        <div class="twelve wide column">
+                            <a href="http://www.nicovideo.jp/watch/{{smcode}}" target="_blank">
+                                <h3>{{name}} <small>{{producer}}</small></h3>
+                            </a>
+                            <p class="rankchange">Change from Last Month: {{rankchange}}</p>
+                        </div>
                     </div>
-                    <div class="pull-left">
-                        <a href="http://www.nicovideo.jp/watch/{{smcode}}" target="_blank">
-                            <h3>{{name}} <small>{{producer}}</small></h3>
-                        </a>
-                    </div>
-                </div>
-            {{/if}}
-        {{/each}}
+                    <div class="ui divider"></div>
+                {{/if}}
+            {{/each}}
+        </div>
     </div>
 </template>

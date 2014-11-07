@@ -5,17 +5,17 @@
         {{/each}}
     </div>
 
-    <div class="add-message">
-        <p class="pull-left">
-            {{> loginButtons}}
-            <!-- add a tripcode type thing to validate a true user ala 4chan -->
-            <!-- <input id="user" type="text" class="form-control" value="user"> -->
-        </p>
-        <div class="form-group">
-            <input id="chat-message" class="form-control" placeholder="Write a message">
+    <div class="add-message ui divided grid">
+        <div class="four wide column">
+            <div class="ui vertical">
+                {{> loginButtons}}
+            </div>
         </div>
-        <div class="form-group clearfix">
-            <button class='btn btn-primary' id='send'>Send Chat</button>
+        <div class="twelve wide column">
+            <div class="ui fluid small action input vertical">
+                <input id="chat-message" placeholder="Send message..." type="text">
+                <div id="send" class="ui small green button">Send</div>
+            </div>
         </div>
     </div>
 </template>

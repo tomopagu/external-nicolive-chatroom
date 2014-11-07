@@ -3,9 +3,9 @@
         <div id="flvplayer_container">
             {{#each videoids}}
                 {{#if videoid}}
-                    <embed width="960" height="488" flashvars="v={{videoid}}&amp;languagecode=en-us&amp;localecode=US&amp;localeForSeat=US&amp;applyLangFilter=1" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#FFF" name="flvplayer" id="flvplayer" src="http://live.nicovideo.jp/nicoliveplayer.swf" type="application/x-shockwave-flash">
+                    <embed flashvars="v={{videoid}}&amp;languagecode=en-us&amp;localecode=US&amp;localeForSeat=US&amp;applyLangFilter=1" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#FFF" name="flvplayer" id="flvplayer" src="http://live.nicovideo.jp/nicoliveplayer.swf" type="application/x-shockwave-flash">
                 {{else}}
-                    <embed width="960" height="488" flashvars="v=lv198959394&amp;languagecode=en-us&amp;localecode=US&amp;localeForSeat=US&amp;applyLangFilter=1" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#FFF" name="flvplayer" id="flvplayer" src="http://live.nicovideo.jp/nicoliveplayer.swf" type="application/x-shockwave-flash">
+                    <embed flashvars="v=lv198959394&amp;languagecode=en-us&amp;localecode=US&amp;localeForSeat=US&amp;applyLangFilter=1" allowscriptaccess="always" allowfullscreen="true" quality="high" bgcolor="#FFF" name="flvplayer" id="flvplayer" src="http://live.nicovideo.jp/nicoliveplayer.swf" type="application/x-shockwave-flash">
                 {{/if}}
             {{/each}}
         </div>
