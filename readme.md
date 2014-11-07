@@ -5,7 +5,7 @@ A meteor webapp that houses a chatroom & embed of a Nicolive stream.
 
 ### Still in progress
 
-Mostly going to be used by the English community when no English chatroom exsists on Niconico itself.
+Mostly going to be used by the English community when no English chatroom exists on Niconico itself.
 
 Could have some other uses though!
 
@@ -16,5 +16,3 @@ Could have some other uses though!
 
 ## TODO
 - Styling
-- Songlist
-- Post songs to chat
