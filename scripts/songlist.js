@@ -1,14 +1,9 @@
 Songlist = new Mongo.Collection('songlist');
 
 Songlist.after.insert(function (userId, doc) {
-  var rankid = '<span class="rankid">'+doc.rankid+'</span>';
-  var name = '<span class="songname">'+doc.name+'</span>';
-  var producer = '<span class="producer">'+doc.producer+'</span>';
-  var nicolink = '<a href="http://www.nicovideo.jp/watch/'+doc.smcode+'" title="'+doc.name+'" target="_blank">'+doc.smcode+'</a>';
-
   Messages.insert({
     user: null,
-    content: rankid+': '+name+'  '+producer+' // '+nicolink,
+    content: '<a href="http://www.nicovideo.jp/watch/'+doc.smcode+'" title="'+doc.name+'" target="_blank"><div class="rankid ui small red horizontal label">'+doc.rankid+'</div><span class="songname">'+doc.name+'</span></a>',
     createdAt: new Date() // current time
   });
 });
