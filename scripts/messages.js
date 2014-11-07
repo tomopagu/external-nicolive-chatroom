@@ -26,7 +26,7 @@ if (Meteor.isClient) {
 
         Meteor.users.update({_id: Meteor.userId()}, {$set: {username: username}});
       }
-      var content = jQuery('#chat-message').val();
+      var content = $('#chat-message').val();
 
       Messages.insert({
         user: username,
@@ -35,7 +35,7 @@ if (Meteor.isClient) {
       });
 
       // Clear form
-      jQuery('#chat-message').val('');
+      $('#chat-message').val('');
 
       // Prevent default form submit
       return false;
