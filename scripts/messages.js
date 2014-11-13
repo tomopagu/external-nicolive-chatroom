@@ -57,6 +57,19 @@ function intToARGB(i) {
     return h.substring(0, 6);
 }
 
+function addSaturation(color, amount) {
+    var color = color.replace('#', '').split('');
+    var letters = '0123456789ABCDEF'.split('');
+    for(var i = 0; i < color.length; i++){
+        var newSaturation = 0;
+        if(letters.indexOf(color[i]) + amount > 15) newSaturation = 15;
+        else if(letters.indexOf(color[i]) + amount < 0) newSaturation = 0;
+        else newSaturation = letters.indexOf(color[i]) + amount;
+        color[i] = letters[newSaturation];
+    }
+    return "#" + color.join('');
+}
+
 if (Meteor.isClient) {
     Meteor.subscribe("messages");
     Template.chatBox.helpers({
@@ -67,7 +80,7 @@ if (Meteor.isClient) {
     Template.chatMessage.helpers({
         color: function() {
             var color = '#' + intToARGB(hashCode( this.user ));
-            return color;
+            return addSaturation(color, 10);
         }
     });
 
