@@ -1,8 +1,10 @@
 <template name="chatBox">
     <div class="messages">
-        {{#each messages}}
-            {{> chatMessage}}
-        {{/each}}
+        <div class="message-list">
+            {{#each messages}}
+                {{> chatMessage}}
+            {{/each}}
+        </div>
     </div>
 
     <div class="add-message ui divided grid">
