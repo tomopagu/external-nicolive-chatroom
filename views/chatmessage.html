@@ -1,11 +1,12 @@
 <template name="chatMessage">
     {{#if user}}
-        <span class="timestamp">&ndash; <span data-livestamp="{{createdAt}}"></span></span>
     <div class="message" style="background-color: {{ color }}">
         <p class="message-content">
             <span class="username">{{user}}:</span>
             {{content}}
         </p>
+        <p class="timestamp">{{formatDate createdAt 'DD/MM/YY HH:mm:ss'}}</p>
+    </div>
     {{else}}
     <div class="songbot-message">
         {{{content}}}
