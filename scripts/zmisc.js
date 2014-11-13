@@ -17,3 +17,7 @@ if (Meteor.isServer) {
   Houston.add_collection(Songlist);
   Houston.add_collection(Meteor.users);
 }
+
+Router.route('/', function () {
+  this.render('index');
+});

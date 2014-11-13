@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-copleykj:livestamp
 houston:admin
 less
 mizzao:user-status
@@ -13,3 +12,6 @@ artwells:accounts-guest
 accounts-password
 matb33:collection-hooks
 richsilv:semantic-ui
+iron:router
+rainhaven:moment-helpers
+
