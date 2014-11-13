@@ -1,3 +1,18 @@
+function hashCode(str) {
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return hash;
+}
+function intToARGB(i) {
+    var h = ((i>>24)&0xFF).toString(16) +
+            ((i>>16)&0xFF).toString(16) +
+            ((i>>8)&0xFF).toString(16) +
+            (i&0xFF).toString(16);
+    return h.substring(0, 6);
+}
+
 if (Meteor.isClient) {
   Meteor.subscribe("userStatus");
   Template.userList.helpers({
@@ -5,8 +20,8 @@ if (Meteor.isClient) {
       return Meteor.users.find({ "status.online": true });
     },
     color: function() {
-        var colors = ['black','green','red','blue','purple','teal'];
-        return colors[Math.floor(Math.random()*colors.length)];
+        var color = '#' + intToARGB(hashCode( this.username ));
+        return color;
     }
   });
 }

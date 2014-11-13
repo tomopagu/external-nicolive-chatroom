@@ -4,8 +4,8 @@
         <div class="ui horizontal list">
             {{#each users}}
                 <div class="item">
-                    <div class="ui {{color}} circular label"></div>
-                    <div class="content">{{username}}</div>
+                    <div class="ui circular label" style="background-color: {{ color }}"></div>
+                    <div class="content">{{ username }}</div>
                 </div>
             {{/each}}
         </div>
