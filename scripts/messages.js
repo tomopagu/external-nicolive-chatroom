@@ -16,21 +16,12 @@ function submitMessage (event) {
 }
 
 function sendMessage (event) {
-    if (Meteor.user())
-    {
-        username = Meteor.user().username;
-    }
-    else
-    {
-        var shortID = Meteor.userId().substr(0,6);
-        username = 'Anon-'+shortID;
-
-        Meteor.users.update({_id: Meteor.userId()}, {$set: {username: username}});
-    }
+    var userdata = Meteor.users.findOne({_id: Meteor.userId()});
     var content = $('#chat-message').val();
 
     Messages.insert({
-        user: username,
+        user: userdata.username,
+        color: userdata.color,
         content: content,
         createdAt: new Date() // current time
     });
@@ -47,12 +38,6 @@ if (Meteor.isClient) {
     Template.chatBox.helpers({
         messages: function() {
             return Messages.find({}, {sort: {createdAt: 1}});
-        }
-    });
-    Template.chatMessage.helpers({
-        color: function() {
-            var userdata = Meteor.users.findOne({username: this.user});
-            return userdata.color;
         }
     });
 
