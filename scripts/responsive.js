@@ -5,10 +5,12 @@ if (Meteor.isClient) {
     var screenHeight = window.innerHeight;
 
     var messagesAreaHeight = screenHeight - 60;
-    $('.messages').height(messagesAreaHeight);
-    $('.message-list').height(messagesAreaHeight);
+    $('.messages').attr('style', 'height: '+messagesAreaHeight+'px;');
+    $('.message-list').attr('style', 'height: '+messagesAreaHeight+'px;');
 
-    $('.messages').scrollTop( 9999 );
+
+    var scrollHeight = $('.messages').prop('scrollHeight');
+    $('.messages').scrollTop( scrollHeight );
 
     var songsPosition = $('.songs').position();
     var songlistHeight = screenHeight - songsPosition.top;

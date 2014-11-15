@@ -18,6 +18,7 @@ function submitMessage (event) {
 function sendMessage (event) {
     var userdata = Meteor.users.findOne({_id: Meteor.userId()});
     var content = $('#chat-message').val();
+    var oldscrollHeight = $('.messages').prop('scrollHeight');
 
     Messages.insert({
         user: userdata.username,
@@ -28,6 +29,13 @@ function sendMessage (event) {
 
     // Clear form
     $('#chat-message').val('');
+
+    // Auto-scroll
+    var newscrollHeight = $('.messages').prop('scrollHeight');
+    if(newscrollHeight > oldscrollHeight)
+    {
+        $('.messages').animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
+    }
 
     // Prevent default form submit
     return false;
